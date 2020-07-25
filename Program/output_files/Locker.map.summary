@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Fri Jun 03 12:36:03 2016
+Quartus Prime Version : 15.1.1 Build 189 12/02/2015 SJ Lite Edition
+Revision Name : Locker
+Top-level Entity Name : Locker
+Family : Cyclone IV E
+Total logic elements : 664
+    Total combinational functions : 639
+    Dedicated logic registers : 183
+Total registers : 183
+Total pins : 69
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

@@ -1,0 +1,77 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+
+entity LockerFSM is
+	port(clk        : in std_logic;
+		  TwentyCoin : in std_logic;
+		  FiftyCoin  : in std_logic;
+		  reset      : in std_logic;
+		  Drink      : out std_logic);
+end DrinksFSM;
+
+architecture Behavioral of LockerFSM is
+	type TState is (NOMONEY, MONEY1, MONEY2, MONEY3, MONEY4, ALLMONEY);
+	signal s_currentState, s_nextState : TState;
+	
+	begin
+		sync_proc : process(clk)
+		begin
+			if (rising_edge(clk)) then
+				if (reset = '1') then
+					s_currentState <= NOMONEY;
+				else
+					s_currentState <= s_nextState;
+				end if;
+			end if;
+		end process;
+		
+	comb_proc : process(s_currentState, TwentyCoin, FiftyCoin)
+	begin
+		case (s_currentState) is
+		
+		when NOMONEY =>
+			Drink <= '0';
+			if(TwentyCoin = '1') then
+				s_nextState <= MONEY1;
+			elsif(FiftyCoin = '1') then
+				s_nextState <= MONEY3;
+			end if;
+		
+		when MONEY1 =>
+			Drink <= '0';
+			if(TwentyCoin = '1') then
+				s_nextState <= MONEY2;
+			elsif(FiftyCoin = '1') then
+				s_nextState <= MONEY4;
+			end if;
+			
+		when MONEY2 =>
+			Drink <= '0';
+			if(TwentyCoin = '1') then
+				s_nextState <= MONEY3;
+			elsif(FiftyCoin = '1') then
+				s_nextState <= ALLMONEY;
+			end if;
+		
+		when MONEY3 =>
+			Drink <= '0';
+			if(TwentyCoin = '1') then
+				s_nextState <= MONEY4;
+			elsif(FiftyCoin = '1') then
+				s_nextState <= ALLMONEY;
+			end if;
+			
+		when MONEY4 =>
+			Drink <= '0';
+			if(TwentyCoin = '1') then
+				s_nextState <= ALLMONEY;
+			elsif(FiftyCoin = '1') then
+				s_nextState <= ALLMONEY;
+			end if;
+			
+		when ALLMONEY =>
+			drink <= '1';
+		
+		end case;
+	end process;
+end Behavioral;

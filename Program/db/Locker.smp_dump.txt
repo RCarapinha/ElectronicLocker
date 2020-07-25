@@ -1,0 +1,10 @@
+
+State Machine - |Locker|LockerFSM:inst|s_currentState
+Name s_currentState.CHangePassword s_currentState.CompareMaster s_currentState.CloseLocker s_currentState.CompareSuper s_currentState.OpenLocker s_currentState.BeginLocker s_currentState.InitialState 
+s_currentState.InitialState 0 0 0 0 0 0 0 
+s_currentState.BeginLocker 0 0 0 0 0 1 1 
+s_currentState.OpenLocker 0 0 0 0 1 0 1 
+s_currentState.CompareSuper 0 0 0 1 0 0 1 
+s_currentState.CloseLocker 0 0 1 0 0 0 1 
+s_currentState.CompareMaster 0 1 0 0 0 0 1 
+s_currentState.CHangePassword 1 0 0 0 0 0 1 

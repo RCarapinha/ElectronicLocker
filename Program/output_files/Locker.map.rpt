@@ -1,0 +1,728 @@
+Analysis & Synthesis report for Locker
+Fri Jun 03 12:36:03 2016
+Quartus Prime Version 15.1.1 Build 189 12/02/2015 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |Locker|LockerFSM:inst|s_currentState
+  9. User-Specified and Inferred Latches
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: DebounceUnit:inst99
+ 14. Parameter Settings for User Entity Instance: DebounceUnit:inst94
+ 15. Parameter Settings for User Entity Instance: DebounceUnit:inst95
+ 16. Parameter Settings for User Entity Instance: DebounceUnit:inst93
+ 17. Post-Synthesis Netlist Statistics for Top Partition
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Jun 03 12:36:03 2016       ;
+; Quartus Prime Version              ; 15.1.1 Build 189 12/02/2015 SJ Lite Edition ;
+; Revision Name                      ; Locker                                      ;
+; Top-level Entity Name              ; Locker                                      ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 664                                         ;
+;     Total combinational functions  ; 639                                         ;
+;     Dedicated logic registers      ; 183                                         ;
+; Total registers                    ; 183                                         ;
+; Total pins                         ; 69                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; Locker             ; Locker             ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ; < 0.1%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                     ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                           ; Library ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------------------------------+---------+
+; GoDisplay.vhd                    ; yes             ; User VHDL File                     ; C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/GoDisplay.vhd       ;         ;
+; Locker.bdf                       ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/Locker.bdf          ;         ;
+; LockerFSM.vhd                    ; yes             ; User VHDL File                     ; C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd       ;         ;
+; TimerAuxFSM.vhd                  ; yes             ; User VHDL File                     ; C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/TimerAuxFSM.vhd     ;         ;
+; ReadCode.vhd                     ; yes             ; User VHDL File                     ; C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/ReadCode.vhd        ;         ;
+; DebounceUnit.vhd                 ; yes             ; User VHDL File                     ; C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/DebounceUnit.vhd    ;         ;
+; Bin7SegDecoder2.vhd              ; yes             ; User VHDL File                     ; C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/Bin7SegDecoder2.vhd ;         ;
+; CounterDisplay.vhd               ; yes             ; User VHDL File                     ; C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/CounterDisplay.vhd  ;         ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 664            ;
+;                                             ;                ;
+; Total combinational functions               ; 639            ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 195            ;
+;     -- 3 input functions                    ; 185            ;
+;     -- <=2 input functions                  ; 259            ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 450            ;
+;     -- arithmetic mode                      ; 189            ;
+;                                             ;                ;
+; Total registers                             ; 183            ;
+;     -- Dedicated logic registers            ; 183            ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 69             ;
+;                                             ;                ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; clock_50~input ;
+; Maximum fan-out                             ; 183            ;
+; Total fan-out                               ; 2479           ;
+; Average fan-out                             ; 2.58           ;
++---------------------------------------------+----------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                     ;
++-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+--------------+
+; Compilation Hierarchy Node  ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name            ; Library Name ;
++-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+--------------+
+; |Locker                     ; 639 (0)           ; 183 (0)      ; 0           ; 0            ; 0       ; 0         ; 69   ; 0            ; |Locker                        ; work         ;
+;    |Bin7SegDecoder2:inst10| ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Locker|Bin7SegDecoder2:inst10 ; work         ;
+;    |Bin7SegDecoder2:inst11| ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Locker|Bin7SegDecoder2:inst11 ; work         ;
+;    |Bin7SegDecoder2:inst6|  ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Locker|Bin7SegDecoder2:inst6  ; work         ;
+;    |Bin7SegDecoder2:inst9|  ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Locker|Bin7SegDecoder2:inst9  ; work         ;
+;    |CounterDisplay:inst7|   ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Locker|CounterDisplay:inst7   ; work         ;
+;    |DebounceUnit:inst93|    ; 67 (67)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Locker|DebounceUnit:inst93    ; work         ;
+;    |DebounceUnit:inst94|    ; 67 (67)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Locker|DebounceUnit:inst94    ; work         ;
+;    |DebounceUnit:inst95|    ; 67 (67)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Locker|DebounceUnit:inst95    ; work         ;
+;    |DebounceUnit:inst99|    ; 67 (67)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Locker|DebounceUnit:inst99    ; work         ;
+;    |LockerFSM:inst|         ; 167 (167)         ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Locker|LockerFSM:inst         ; work         ;
+;    |ReadCode:inst5|         ; 32 (32)           ; 39 (39)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Locker|ReadCode:inst5         ; work         ;
+;    |TimerAuxFSM:inst8|      ; 107 (107)         ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Locker|TimerAuxFSM:inst8      ; work         ;
++-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Locker|LockerFSM:inst|s_currentState                                                                                                                                                                                          ;
++-------------------------------+-------------------------------+------------------------------+----------------------------+-----------------------------+---------------------------+----------------------------+-----------------------------+
+; Name                          ; s_currentState.CHangePassword ; s_currentState.CompareMaster ; s_currentState.CloseLocker ; s_currentState.CompareSuper ; s_currentState.OpenLocker ; s_currentState.BeginLocker ; s_currentState.InitialState ;
++-------------------------------+-------------------------------+------------------------------+----------------------------+-----------------------------+---------------------------+----------------------------+-----------------------------+
+; s_currentState.InitialState   ; 0                             ; 0                            ; 0                          ; 0                           ; 0                         ; 0                          ; 0                           ;
+; s_currentState.BeginLocker    ; 0                             ; 0                            ; 0                          ; 0                           ; 0                         ; 1                          ; 1                           ;
+; s_currentState.OpenLocker     ; 0                             ; 0                            ; 0                          ; 0                           ; 1                         ; 0                          ; 1                           ;
+; s_currentState.CompareSuper   ; 0                             ; 0                            ; 0                          ; 1                           ; 0                         ; 0                          ; 1                           ;
+; s_currentState.CloseLocker    ; 0                             ; 0                            ; 1                          ; 0                           ; 0                         ; 0                          ; 1                           ;
+; s_currentState.CompareMaster  ; 0                             ; 1                            ; 0                          ; 0                           ; 0                         ; 0                          ; 1                           ;
+; s_currentState.CHangePassword ; 1                             ; 0                            ; 0                          ; 0                           ; 0                         ; 0                          ; 1                           ;
++-------------------------------+-------------------------------+------------------------------+----------------------------+-----------------------------+---------------------------+----------------------------+-----------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                       ;
++-----------------------------------------------------+--------------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                        ; Free of Timing Hazards ;
++-----------------------------------------------------+--------------------------------------------+------------------------+
+; LockerFSM:inst|s_count[0]                           ; LockerFSM:inst|Selector66                  ; yes                    ;
+; LockerFSM:inst|s_count[3]                           ; LockerFSM:inst|Selector66                  ; yes                    ;
+; LockerFSM:inst|s_count[1]                           ; LockerFSM:inst|Selector66                  ; yes                    ;
+; LockerFSM:inst|s_count[2]                           ; LockerFSM:inst|Selector66                  ; yes                    ;
+; LockerFSM:inst|OpenLock                             ; LockerFSM:inst|OpenLock                    ; yes                    ;
+; LockerFSM:inst|s_show[4]                            ; LockerFSM:inst|WideOr10                    ; yes                    ;
+; LockerFSM:inst|s_show[3]                            ; LockerFSM:inst|WideOr10                    ; yes                    ;
+; LockerFSM:inst|s_show[2]                            ; LockerFSM:inst|WideOr10                    ; yes                    ;
+; LockerFSM:inst|s_show[1]                            ; LockerFSM:inst|WideOr10                    ; yes                    ;
+; LockerFSM:inst|s_show[0]                            ; LockerFSM:inst|WideOr10                    ; yes                    ;
+; LockerFSM:inst|UserEnable                           ; LockerFSM:inst|s_currentState.InitialState ; yes                    ;
+; LockerFSM:inst|s_SuperCode[0]                       ; LockerFSM:inst|Selector46                  ; yes                    ;
+; LockerFSM:inst|s_SuperCode[1]                       ; LockerFSM:inst|Selector46                  ; yes                    ;
+; LockerFSM:inst|s_SuperCode[2]                       ; LockerFSM:inst|Selector46                  ; yes                    ;
+; LockerFSM:inst|s_SuperCode[3]                       ; LockerFSM:inst|Selector46                  ; yes                    ;
+; LockerFSM:inst|s_SuperCode[4]                       ; LockerFSM:inst|Selector46                  ; yes                    ;
+; LockerFSM:inst|s_SuperCode[5]                       ; LockerFSM:inst|Selector46                  ; yes                    ;
+; LockerFSM:inst|s_SuperCode[6]                       ; LockerFSM:inst|Selector46                  ; yes                    ;
+; LockerFSM:inst|s_SuperCode[7]                       ; LockerFSM:inst|Selector46                  ; yes                    ;
+; LockerFSM:inst|s_SuperCode[8]                       ; LockerFSM:inst|Selector46                  ; yes                    ;
+; LockerFSM:inst|s_SuperCode[9]                       ; LockerFSM:inst|Selector46                  ; yes                    ;
+; LockerFSM:inst|s_SuperCode[10]                      ; LockerFSM:inst|Selector46                  ; yes                    ;
+; LockerFSM:inst|s_SuperCode[11]                      ; LockerFSM:inst|Selector46                  ; yes                    ;
+; LockerFSM:inst|s_SuperCode[12]                      ; LockerFSM:inst|Selector46                  ; yes                    ;
+; LockerFSM:inst|s_SuperCode[13]                      ; LockerFSM:inst|Selector46                  ; yes                    ;
+; LockerFSM:inst|s_SuperCode[14]                      ; LockerFSM:inst|Selector46                  ; yes                    ;
+; LockerFSM:inst|s_SuperCode[15]                      ; LockerFSM:inst|Selector46                  ; yes                    ;
+; LockerFSM:inst|TimeVal                              ; LockerFSM:inst|s_currentState.InitialState ; yes                    ;
+; LockerFSM:inst|s_penalty[1]                         ; LockerFSM:inst|WideOr8                     ; yes                    ;
+; LockerFSM:inst|s_penalty[2]                         ; LockerFSM:inst|WideOr8                     ; yes                    ;
+; LockerFSM:inst|s_penalty[3]                         ; LockerFSM:inst|WideOr8                     ; yes                    ;
+; LockerFSM:inst|s_penalty[4]                         ; LockerFSM:inst|WideOr8                     ; yes                    ;
+; LockerFSM:inst|s_penalty[5]                         ; LockerFSM:inst|WideOr8                     ; yes                    ;
+; LockerFSM:inst|s_penalty[6]                         ; LockerFSM:inst|WideOr8                     ; yes                    ;
+; LockerFSM:inst|s_penalty[7]                         ; LockerFSM:inst|WideOr8                     ; yes                    ;
+; LockerFSM:inst|s_penalty[8]                         ; LockerFSM:inst|WideOr8                     ; yes                    ;
+; LockerFSM:inst|s_penalty[9]                         ; LockerFSM:inst|WideOr8                     ; yes                    ;
+; LockerFSM:inst|s_penalty[10]                        ; LockerFSM:inst|WideOr8                     ; yes                    ;
+; LockerFSM:inst|s_penalty[11]                        ; LockerFSM:inst|WideOr8                     ; yes                    ;
+; LockerFSM:inst|s_penalty[12]                        ; LockerFSM:inst|WideOr8                     ; yes                    ;
+; LockerFSM:inst|s_penalty[13]                        ; LockerFSM:inst|WideOr8                     ; yes                    ;
+; LockerFSM:inst|s_penalty[14]                        ; LockerFSM:inst|WideOr8                     ; yes                    ;
+; LockerFSM:inst|s_penalty[15]                        ; LockerFSM:inst|WideOr8                     ; yes                    ;
+; LockerFSM:inst|s_penalty[16]                        ; LockerFSM:inst|WideOr8                     ; yes                    ;
+; LockerFSM:inst|s_penalty[17]                        ; LockerFSM:inst|WideOr8                     ; yes                    ;
+; LockerFSM:inst|s_penalty[18]                        ; LockerFSM:inst|WideOr8                     ; yes                    ;
+; LockerFSM:inst|s_penalty[19]                        ; LockerFSM:inst|WideOr8                     ; yes                    ;
+; LockerFSM:inst|s_penalty[20]                        ; LockerFSM:inst|WideOr8                     ; yes                    ;
+; LockerFSM:inst|s_penalty[21]                        ; LockerFSM:inst|WideOr8                     ; yes                    ;
+; LockerFSM:inst|s_penalty[22]                        ; LockerFSM:inst|WideOr8                     ; yes                    ;
+; LockerFSM:inst|s_penalty[23]                        ; LockerFSM:inst|WideOr8                     ; yes                    ;
+; LockerFSM:inst|s_penalty[24]                        ; LockerFSM:inst|WideOr8                     ; yes                    ;
+; LockerFSM:inst|s_penalty[25]                        ; LockerFSM:inst|WideOr8                     ; yes                    ;
+; LockerFSM:inst|s_penalty[26]                        ; LockerFSM:inst|WideOr8                     ; yes                    ;
+; LockerFSM:inst|s_penalty[27]                        ; LockerFSM:inst|WideOr8                     ; yes                    ;
+; LockerFSM:inst|s_penalty[28]                        ; LockerFSM:inst|WideOr8                     ; yes                    ;
+; LockerFSM:inst|s_penalty[29]                        ; LockerFSM:inst|WideOr8                     ; yes                    ;
+; LockerFSM:inst|s_penalty[30]                        ; LockerFSM:inst|WideOr8                     ; yes                    ;
+; Number of user-specified and inferred latches = 58  ;                                            ;                        ;
++-----------------------------------------------------+--------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 183   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 7     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 137   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; ReadCode:inst5|s_pos[0]                 ; 6       ;
+; ReadCode:inst5|s_pos[1]                 ; 5       ;
+; TimerAuxFSM:inst8|s_counter[0]          ; 2       ;
+; TimerAuxFSM:inst8|s_counter[1]          ; 2       ;
+; TimerAuxFSM:inst8|s_counter[2]          ; 2       ;
+; TimerAuxFSM:inst8|s_counter[3]          ; 2       ;
+; TimerAuxFSM:inst8|s_counter[4]          ; 2       ;
+; TimerAuxFSM:inst8|s_counter[5]          ; 2       ;
+; TimerAuxFSM:inst8|s_counter[6]          ; 2       ;
+; TimerAuxFSM:inst8|s_counter[7]          ; 2       ;
+; TimerAuxFSM:inst8|s_counter[8]          ; 2       ;
+; TimerAuxFSM:inst8|s_counter[9]          ; 2       ;
+; TimerAuxFSM:inst8|s_counter[10]         ; 2       ;
+; TimerAuxFSM:inst8|s_counter[11]         ; 2       ;
+; TimerAuxFSM:inst8|s_counter[12]         ; 2       ;
+; TimerAuxFSM:inst8|s_counter[13]         ; 2       ;
+; TimerAuxFSM:inst8|s_counter[14]         ; 2       ;
+; TimerAuxFSM:inst8|s_counter[15]         ; 2       ;
+; TimerAuxFSM:inst8|s_counter[16]         ; 2       ;
+; TimerAuxFSM:inst8|s_counter[17]         ; 2       ;
+; TimerAuxFSM:inst8|s_counter[18]         ; 2       ;
+; TimerAuxFSM:inst8|s_counter[19]         ; 2       ;
+; TimerAuxFSM:inst8|s_counter[20]         ; 2       ;
+; TimerAuxFSM:inst8|s_counter[21]         ; 2       ;
+; TimerAuxFSM:inst8|s_counter[22]         ; 2       ;
+; TimerAuxFSM:inst8|s_counter[23]         ; 2       ;
+; TimerAuxFSM:inst8|s_counter[24]         ; 2       ;
+; TimerAuxFSM:inst8|s_counter[25]         ; 2       ;
+; TimerAuxFSM:inst8|s_counter[26]         ; 2       ;
+; TimerAuxFSM:inst8|s_counter[27]         ; 2       ;
+; TimerAuxFSM:inst8|s_counter[28]         ; 2       ;
+; TimerAuxFSM:inst8|s_counter[29]         ; 2       ;
+; TimerAuxFSM:inst8|s_counter[30]         ; 2       ;
+; TimerAuxFSM:inst8|s_counter[31]         ; 2       ;
+; Total number of inverted registers = 34 ;         ;
++-----------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |Locker|DebounceUnit:inst93|s_debounceCnt[0]    ;
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |Locker|DebounceUnit:inst95|s_debounceCnt[14]   ;
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |Locker|DebounceUnit:inst99|s_debounceCnt[6]    ;
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |Locker|DebounceUnit:inst94|s_debounceCnt[17]   ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |Locker|TimerAuxFSM:inst8|s_counter[23]         ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |Locker|LockerFSM:inst|s_nextState.CompareSuper ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |Locker|CounterDisplay:inst7|decOut0[4]         ;
+; 17:1               ; 2 bits    ; 22 LEs        ; 16 LEs               ; 6 LEs                  ; No         ; |Locker|Bin7SegDecoder2:inst11|decOut_n[3]      ;
+; 17:1               ; 2 bits    ; 22 LEs        ; 16 LEs               ; 6 LEs                  ; No         ; |Locker|Bin7SegDecoder2:inst10|decOut_n[6]      ;
+; 17:1               ; 2 bits    ; 22 LEs        ; 16 LEs               ; 6 LEs                  ; No         ; |Locker|Bin7SegDecoder2:inst9|decOut_n[3]       ;
+; 17:1               ; 2 bits    ; 22 LEs        ; 16 LEs               ; 6 LEs                  ; No         ; |Locker|Bin7SegDecoder2:inst6|decOut_n[3]       ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Locker|CounterDisplay:inst7|decOut0[5]         ;
+; 4:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; No         ; |Locker|LockerFSM:inst|Selector16               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DebounceUnit:inst99 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; khzclkfreq     ; 50000 ; Signed Integer                          ;
+; msecmininwidth ; 100   ; Signed Integer                          ;
+; inpolarity     ; '1'   ; Enumerated                              ;
+; outpolarity    ; '1'   ; Enumerated                              ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DebounceUnit:inst94 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; khzclkfreq     ; 50000 ; Signed Integer                          ;
+; msecmininwidth ; 100   ; Signed Integer                          ;
+; inpolarity     ; '1'   ; Enumerated                              ;
+; outpolarity    ; '1'   ; Enumerated                              ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DebounceUnit:inst95 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; khzclkfreq     ; 50000 ; Signed Integer                          ;
+; msecmininwidth ; 100   ; Signed Integer                          ;
+; inpolarity     ; '1'   ; Enumerated                              ;
+; outpolarity    ; '1'   ; Enumerated                              ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DebounceUnit:inst93 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; khzclkfreq     ; 50000 ; Signed Integer                          ;
+; msecmininwidth ; 100   ; Signed Integer                          ;
+; inpolarity     ; '1'   ; Enumerated                              ;
+; outpolarity    ; '1'   ; Enumerated                              ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 69                          ;
+; cycloneiii_ff         ; 183                         ;
+;     CLR               ; 7                           ;
+;     ENA               ; 137                         ;
+;     plain             ; 39                          ;
+; cycloneiii_lcell_comb ; 643                         ;
+;     arith             ; 189                         ;
+;         2 data inputs ; 153                         ;
+;         3 data inputs ; 36                          ;
+;     normal            ; 454                         ;
+;         0 data inputs ; 3                           ;
+;         1 data inputs ; 8                           ;
+;         2 data inputs ; 99                          ;
+;         3 data inputs ; 149                         ;
+;         4 data inputs ; 195                         ;
+;                       ;                             ;
+; Max LUT depth         ; 7.00                        ;
+; Average LUT depth     ; 4.11                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 15.1.1 Build 189 12/02/2015 SJ Lite Edition
+    Info: Processing started: Fri Jun 03 12:35:35 2016
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Locker -c Locker
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file godisplay.vhd
+    Info (12022): Found design unit 1: GoDisplay-v1 File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/GoDisplay.vhd Line: 17
+    Info (12023): Found entity 1: GoDisplay File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/GoDisplay.vhd Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file locker.bdf
+    Info (12023): Found entity 1: Locker
+Info (12021): Found 2 design units, including 1 entities, in source file lockerfsm.vhd
+    Info (12022): Found design unit 1: LockerFSM-Arch File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 28
+    Info (12023): Found entity 1: LockerFSM File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file timerauxfsm.vhd
+    Info (12022): Found design unit 1: TimerAuxFSM-Behavioral File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/TimerAuxFSM.vhd Line: 18
+    Info (12023): Found entity 1: TimerAuxFSM File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/TimerAuxFSM.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file readcode.vhd
+    Info (12022): Found design unit 1: ReadCode-Behav File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/ReadCode.vhd Line: 30
+    Info (12023): Found entity 1: ReadCode File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/ReadCode.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file debounceunit.vhd
+    Info (12022): Found design unit 1: DebounceUnit-Behavioral File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/DebounceUnit.vhd Line: 20
+    Info (12023): Found entity 1: DebounceUnit File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/DebounceUnit.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file bin7segdecoder2.vhd
+    Info (12022): Found design unit 1: Bin7SegDecoder2-Behavioral File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/Bin7SegDecoder2.vhd Line: 14
+    Info (12023): Found entity 1: Bin7SegDecoder2 File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/Bin7SegDecoder2.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file counterdisplay.vhd
+    Info (12022): Found design unit 1: CounterDisplay-Behavioral File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/CounterDisplay.vhd Line: 15
+    Info (12023): Found entity 1: CounterDisplay File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/CounterDisplay.vhd Line: 9
+Info (12127): Elaborating entity "Locker" for the top level hierarchy
+Info (12128): Elaborating entity "Bin7SegDecoder2" for hierarchy "Bin7SegDecoder2:inst11"
+Info (12128): Elaborating entity "ReadCode" for hierarchy "ReadCode:inst5"
+Info (12128): Elaborating entity "LockerFSM" for hierarchy "LockerFSM:inst"
+Warning (10540): VHDL Signal Declaration warning at LockerFSM.vhd(37): used explicit default value for signal "s_MasterCode" because signal was never assigned a value File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 37
+Warning (10631): VHDL Process Statement warning at LockerFSM.vhd(50): inferring latch(es) for signal or variable "s_count", which holds its previous value in one or more paths through the process File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Warning (10631): VHDL Process Statement warning at LockerFSM.vhd(50): inferring latch(es) for signal or variable "s_SuperCode", which holds its previous value in one or more paths through the process File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Warning (10631): VHDL Process Statement warning at LockerFSM.vhd(50): inferring latch(es) for signal or variable "s_penalty", which holds its previous value in one or more paths through the process File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Warning (10631): VHDL Process Statement warning at LockerFSM.vhd(50): inferring latch(es) for signal or variable "UserEnable", which holds its previous value in one or more paths through the process File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Warning (10631): VHDL Process Statement warning at LockerFSM.vhd(50): inferring latch(es) for signal or variable "TimeVal", which holds its previous value in one or more paths through the process File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Warning (10631): VHDL Process Statement warning at LockerFSM.vhd(50): inferring latch(es) for signal or variable "OpenLock", which holds its previous value in one or more paths through the process File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Warning (10631): VHDL Process Statement warning at LockerFSM.vhd(50): inferring latch(es) for signal or variable "s_show", which holds its previous value in one or more paths through the process File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_show[0]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_show[1]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_show[2]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_show[3]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_show[4]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "OpenLock" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "TimeVal" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "UserEnable" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_penalty[0]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_penalty[1]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_penalty[2]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_penalty[3]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_penalty[4]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_penalty[5]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_penalty[6]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_penalty[7]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_penalty[8]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_penalty[9]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_penalty[10]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_penalty[11]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_penalty[12]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_penalty[13]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_penalty[14]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_penalty[15]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_penalty[16]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_penalty[17]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_penalty[18]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_penalty[19]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_penalty[20]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_penalty[21]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_penalty[22]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_penalty[23]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_penalty[24]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_penalty[25]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_penalty[26]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_penalty[27]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_penalty[28]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_penalty[29]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_penalty[30]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_SuperCode[0]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_SuperCode[1]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_SuperCode[2]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_SuperCode[3]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_SuperCode[4]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_SuperCode[5]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_SuperCode[6]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_SuperCode[7]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_SuperCode[8]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_SuperCode[9]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_SuperCode[10]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_SuperCode[11]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_SuperCode[12]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_SuperCode[13]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_SuperCode[14]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_SuperCode[15]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_count[0]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_count[1]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_count[2]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (10041): Inferred latch for "s_count[3]" at LockerFSM.vhd(50) File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Info (12128): Elaborating entity "TimerAuxFSM" for hierarchy "TimerAuxFSM:inst8"
+Info (12128): Elaborating entity "DebounceUnit" for hierarchy "DebounceUnit:inst99"
+Info (12128): Elaborating entity "CounterDisplay" for hierarchy "CounterDisplay:inst7"
+Info (12128): Elaborating entity "GoDisplay" for hierarchy "GoDisplay:inst12"
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "LockerFSM:inst|s_show[3]" merged with LATCH primitive "LockerFSM:inst|s_show[4]" File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Info (13026): Duplicate LATCH primitive "LockerFSM:inst|s_show[2]" merged with LATCH primitive "LockerFSM:inst|s_show[4]" File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Info (13026): Duplicate LATCH primitive "LockerFSM:inst|s_show[1]" merged with LATCH primitive "LockerFSM:inst|s_show[4]" File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Info (13026): Duplicate LATCH primitive "LockerFSM:inst|s_show[0]" merged with LATCH primitive "LockerFSM:inst|s_show[4]" File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+Warning (13012): Latch LockerFSM:inst|s_count[0] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.BeginLocker File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_count[3] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.BeginLocker File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_count[1] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.BeginLocker File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_count[2] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.BeginLocker File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_show[4] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.CloseLocker File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_SuperCode[0] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.CHangePassword File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_SuperCode[1] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.CHangePassword File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_SuperCode[2] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.CHangePassword File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_SuperCode[3] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.CHangePassword File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_SuperCode[4] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.CHangePassword File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_SuperCode[5] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.CHangePassword File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_SuperCode[6] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.CHangePassword File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_SuperCode[7] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.CHangePassword File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_SuperCode[8] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.CHangePassword File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_SuperCode[9] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.CHangePassword File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_SuperCode[10] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.CHangePassword File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_SuperCode[11] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.CHangePassword File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_SuperCode[12] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.CHangePassword File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_SuperCode[13] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.CHangePassword File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_SuperCode[14] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.CHangePassword File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_SuperCode[15] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.CHangePassword File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_penalty[1] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.InitialState File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_penalty[2] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.InitialState File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_penalty[3] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.CompareMaster File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_penalty[4] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.InitialState File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_penalty[5] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.CompareMaster File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_penalty[6] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.CompareMaster File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_penalty[7] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.CompareMaster File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_penalty[8] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.InitialState File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_penalty[9] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.InitialState File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_penalty[10] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.InitialState File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_penalty[11] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.InitialState File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_penalty[12] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.InitialState File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_penalty[13] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.InitialState File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_penalty[14] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.InitialState File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_penalty[15] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.InitialState File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_penalty[16] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.InitialState File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_penalty[17] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.InitialState File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_penalty[18] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.InitialState File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_penalty[19] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.InitialState File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_penalty[20] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.InitialState File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_penalty[21] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.InitialState File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_penalty[22] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.InitialState File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_penalty[23] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.InitialState File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_penalty[24] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.InitialState File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_penalty[25] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.InitialState File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_penalty[26] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.InitialState File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_penalty[27] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.InitialState File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_penalty[28] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.InitialState File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_penalty[29] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.InitialState File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13012): Latch LockerFSM:inst|s_penalty[30] has unsafe behavior File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LockerFSM:inst|s_currentState.InitialState File: C:/Users/Rui/Downloads/LSDig-mini-projeto-P20-NMec79970-NMec79926/Projeto Final v2/LockerFSM.vhd Line: 31
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC
+    Warning (13410): Pin "HEX5[2]" is stuck at GND
+    Warning (13410): Pin "HEX5[1]" is stuck at GND
+    Warning (13410): Pin "HEX6[6]" is stuck at VCC
+    Warning (13410): Pin "HEX7[1]" is stuck at VCC
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 739 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
+    Info (21059): Implemented 61 output pins
+    Info (21061): Implemented 670 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 116 warnings
+    Info: Peak virtual memory: 854 megabytes
+    Info: Processing ended: Fri Jun 03 12:36:03 2016
+    Info: Elapsed time: 00:00:28
+    Info: Total CPU time (on all processors): 00:01:00
+
+

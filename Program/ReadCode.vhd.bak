@@ -1,0 +1,81 @@
+Library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+entity ReadCode is
+	port(	enable	: in std_logic;
+			key0 		: in std_logic;	--Enter
+			key1 		: in std_logic;	--Esquerda
+			key2 		: in std_logic;	--Decremento
+			key3 		: in std_logic;	--Incremento
+			valid 	: out std_logic;
+			Code 		: out std_logic_vector(15 downto 0));
+end ReadCode;
+
+architecture Behav of ReadCode is
+	signal s_pos   : unsigned(std_logic_vector(1 downto 0)) := "11";
+	signal s_digit : unsigned(std_logic_vector(15 downto 0));
+	signal s_cont  : unsigned(std_logic_vector(3 downto 0)) := "0000";
+	begin
+		process(key0, key1, key2, key3)
+		begin
+		if(enable = '1')then
+			if(s_pos <= "11")then--------------------------------------------------------------------
+				if(key3 = '1')then
+					s_cont <= s_cont + "0001";
+				elsif(key1 = '1')then
+						--s_digit(((to_integer(s_pos) * 4 + 3) downto (to_integer(s_pos) * 4))) <= s_cont;
+						s_digit(15 downto 12) <= s_cont;
+						s_pos <= s_pos - "01";
+						s_cont <= "0000";
+				elsif(key2 = '1')then
+					s_cont <= s_cont - "0001";
+				else
+					s_cont <= s_cont + "0000";
+				end if;
+			elsif(s_pos <= "10")then-------------------------------------------------------------------
+				if(key3 = '1')then
+					s_cont <= s_cont + "0001";
+				elsif(key1 = '1')then
+					--s_digit(((to_integer(s_pos) * 4 + 3) downto (to_integer(s_pos) * 4))) <= s_cont;
+					s_digit(11 downto 8) <= s_cont;
+					s_pos <= s_pos - "01";
+					s_cont <= "0000";
+				elsif(key2 = '1')then
+					s_cont <= s_cont - "0001";
+				else
+					s_cont <= s_cont + "0000";
+				end if;
+			elsif(s_pos <= "01")then-----------------------------------------------------------------------
+				if(key3 = '1')then
+					s_cont <= s_cont + "0001";
+				elsif(key1 = '1')then
+					--s_digit(((to_integer(s_pos) * 4 + 3) downto (to_integer(s_pos) * 4))) <= s_cont;
+					s_digit(7 downto 4) <= s_cont;
+					s_pos <= s_pos - "01";
+					s_cont <= "0000";
+				elsif(key2 = '1')then
+					s_cont <= s_cont - "0001";
+				else
+					s_cont <= s_cont + "0000";
+				end if;
+			else--------------------------------------------------------------------
+				if(key3 = '1')then
+					s_cont <= s_cont + "0001";
+				elsif(key1 = '1')then
+					--s_digit(((to_integer(s_pos) * 4 + 3) downto (to_integer(s_pos) * 4))) <= s_cont;
+					s_digit(3 downto 0) <= s_cont;
+					s_pos <= "11";
+					s_cont <= "0000";
+				elsif(key0 = '1')then
+					Code <= std_logic_vector(s_digit);
+					valid <= '1';
+				elsif(key2 = '1')then
+					s_cont <= s_cont - "0001";
+				else
+					s_cont <= s_cont + "0000";
+				end if;
+			end if;
+		end if;
+	end process;
+end Behav;

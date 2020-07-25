@@ -1,0 +1,149 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clock_50'
+Slack : -6.523
+TNS   : -582.740
+
+Type  : Slow 1200mV 85C Model Setup 'LockerFSM:inst|s_currentState.InitialState'
+Slack : -5.623
+TNS   : -203.806
+
+Type  : Slow 1200mV 85C Model Setup 'LockerFSM:inst|s_currentState.BeginLocker'
+Slack : -4.643
+TNS   : -18.597
+
+Type  : Slow 1200mV 85C Model Setup 'LockerFSM:inst|s_currentState.CHangePassword'
+Slack : -3.247
+TNS   : -37.512
+
+Type  : Slow 1200mV 85C Model Hold 'clock_50'
+Slack : 0.107
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'LockerFSM:inst|s_currentState.CHangePassword'
+Slack : 0.151
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'LockerFSM:inst|s_currentState.InitialState'
+Slack : 0.647
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'LockerFSM:inst|s_currentState.BeginLocker'
+Slack : 0.984
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock_50'
+Slack : -3.000
+TNS   : -238.155
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'LockerFSM:inst|s_currentState.InitialState'
+Slack : 0.364
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'LockerFSM:inst|s_currentState.CHangePassword'
+Slack : 0.398
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'LockerFSM:inst|s_currentState.BeginLocker'
+Slack : 0.399
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'clock_50'
+Slack : -5.864
+TNS   : -512.431
+
+Type  : Slow 1200mV 0C Model Setup 'LockerFSM:inst|s_currentState.InitialState'
+Slack : -5.010
+TNS   : -184.204
+
+Type  : Slow 1200mV 0C Model Setup 'LockerFSM:inst|s_currentState.BeginLocker'
+Slack : -4.159
+TNS   : -17.014
+
+Type  : Slow 1200mV 0C Model Setup 'LockerFSM:inst|s_currentState.CHangePassword'
+Slack : -3.113
+TNS   : -36.134
+
+Type  : Slow 1200mV 0C Model Hold 'clock_50'
+Slack : 0.076
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'LockerFSM:inst|s_currentState.CHangePassword'
+Slack : 0.244
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'LockerFSM:inst|s_currentState.InitialState'
+Slack : 0.801
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'LockerFSM:inst|s_currentState.BeginLocker'
+Slack : 1.022
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock_50'
+Slack : -3.000
+TNS   : -238.155
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'LockerFSM:inst|s_currentState.CHangePassword'
+Slack : 0.218
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'LockerFSM:inst|s_currentState.BeginLocker'
+Slack : 0.313
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'LockerFSM:inst|s_currentState.InitialState'
+Slack : 0.321
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'clock_50'
+Slack : -2.808
+TNS   : -214.366
+
+Type  : Fast 1200mV 0C Model Setup 'LockerFSM:inst|s_currentState.InitialState'
+Slack : -2.358
+TNS   : -82.453
+
+Type  : Fast 1200mV 0C Model Setup 'LockerFSM:inst|s_currentState.BeginLocker'
+Slack : -2.156
+TNS   : -8.210
+
+Type  : Fast 1200mV 0C Model Setup 'LockerFSM:inst|s_currentState.CHangePassword'
+Slack : -1.428
+TNS   : -14.782
+
+Type  : Fast 1200mV 0C Model Hold 'clock_50'
+Slack : -0.076
+TNS   : -0.076
+
+Type  : Fast 1200mV 0C Model Hold 'LockerFSM:inst|s_currentState.CHangePassword'
+Slack : -0.030
+TNS   : -0.030
+
+Type  : Fast 1200mV 0C Model Hold 'LockerFSM:inst|s_currentState.InitialState'
+Slack : 0.075
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'LockerFSM:inst|s_currentState.BeginLocker'
+Slack : 0.727
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock_50'
+Slack : -3.000
+TNS   : -197.023
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'LockerFSM:inst|s_currentState.CHangePassword'
+Slack : 0.213
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'LockerFSM:inst|s_currentState.BeginLocker'
+Slack : 0.251
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'LockerFSM:inst|s_currentState.InitialState'
+Slack : 0.296
+TNS   : 0.000
+
+------------------------------------------------------------
